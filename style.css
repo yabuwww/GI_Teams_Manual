@@ -1,0 +1,476 @@
+/* 全体のリセットと基本設定 */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg-color, #fcf9f6); 
+    color: var(--text-color, #333);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 📌 固定ヘッダーのデザイン（GIオレンジ！） */
+.main-header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg, #F57C00); 
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background-color 0.3s;
+}
+
+.main-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+}
+
+.main-header p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* 🏠 左上のホームに戻るボタン */
+#header-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+#header-back-btn:hover { background: rgba(0,0,0,0.3); }
+
+/* 🌙 ダークモード切替ボタン */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme-toggle:hover { background: rgba(0,0,0,0.3); }
+
+/* スマホ用のヘッダー微調整 */
+@media (max-width: 500px) {
+    .main-header { padding-top: 15px; }
+    .main-header h1 { font-size: 1.3rem; margin-top: 35px; }
+    #header-back-btn { top: 15px; left: 15px; padding: 6px 12px; font-size: 0.8rem; }
+    #theme-toggle { top: 15px; right: 15px; width: 35px; height: 35px; font-size: 1rem; }
+}
+
+/* メイン部分の幅制限 */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- カラーセマンティクス（意味のある色分け）クラス --- */
+.text-orange { color: var(--color-orange-dark, #E65100); margin-top: 0; }
+.text-blue   { color: var(--color-blue, #1976d2); margin-top: 0; }
+.text-green  { color: var(--color-green, #2e7d32); margin-top: 0; }
+.text-red    { color: var(--color-red, #d32f2f); margin-top: 0; }
+.text-purple { color: var(--color-purple, #7b1fa2); margin-top: 0; }
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: var(--text-muted, #444);
+}
+
+.sos-guide { margin-top: 40px; }
+.sos-card { background-color: var(--sos-bg, #F1F8E9); }
+.sos-title { margin-top: 0; margin-bottom: 8px; }
+.tips-title { margin-top: 50px; }
+.margin-top-15 { margin-top: 15px; }
+
+/* 🏷️ バッジデザイン（チャネル名などを際立たせる） */
+.badge {
+    display: inline-block;
+    background-color: var(--badge-bg, #eeeeee);
+    color: var(--badge-text, #333333);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid var(--badge-border, #dddddd);
+    vertical-align: middle;
+}
+
+/* --- グリッドレイアウト --- */
+.nav-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 15px;
+}
+
+/* --- カード共通のデザイン --- */
+.card {
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+/* --- 汎用コンテンツ用カード --- */
+.content-card {
+    background: var(--card-bg, white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid var(--card-border, #eaeaea);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.content-card h3, .content-card h4, .content-card h5 {
+    margin: 0 0 8px 0;
+    color: var(--heading-color, #333);
+}
+.content-card h3 { font-size: 1.2em; }
+.content-card h4 { font-size: 1.1em; }
+.content-card h5 { font-size: 1.05em; display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+
+.content-card p {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-muted, #555);
+    line-height: 1.6;
+}
+
+/* ★ここでボーダーカラーを指定する */
+.border-orange { border-left: 5px solid var(--color-orange, #f57c00); }
+.border-blue   { border-left: 5px solid var(--color-blue, #1976d2); }
+.border-green  { border-left: 5px solid var(--color-green, #2e7d32); }
+.border-red    { border-left: 5px solid var(--color-red, #d32f2f); }
+.border-purple { border-left: 5px solid var(--color-purple, #7b1fa2); }
+
+/* --- メニューカードごとの色分け --- */
+.glossary { background: var(--menu-glossary, #FFF8E1); border-color: var(--menu-glossary-border, #FFECB3); }
+.glossary h2 { color: var(--color-orange, #F57C00); margin: 0 0 10px 0;}
+
+.channel-card { background: var(--menu-channel, #e8f5e9); border-color: var(--menu-channel-border, #c8e6c9); }
+.channel-card h2 { color: var(--color-green, #2e7d32); margin: 0 0 10px 0;}
+
+.rule { background: var(--menu-rule, #ffebee); border-color: var(--menu-rule-border, #ffcdd2); }
+.rule h2 { color: var(--color-red, #d32f2f); margin: 0 0 10px 0;}
+
+.workflow { background: var(--menu-workflow, #FFF3E0); border-color: var(--menu-workflow-border, #FFE0B2); } 
+.workflow h2 { color: var(--color-orange-dark, #E65100); margin: 0 0 10px 0;}
+
+/* --- 各セクション用のデザイン --- */
+.section-title {
+    color: var(--color-orange-dark, #E65100); 
+    border-bottom: 2px solid var(--border-color, #FFE0B2); 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 見出しの余白と色の調整 */
+.group-title {
+    color: var(--color-orange-dark, #E65100);
+    background: var(--group-bg, #FFF3E0);
+    padding: 10px;
+    border-left: 5px solid var(--color-orange, #F57C00);
+    border-radius: 4px;
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.content-section .group-title:first-of-type {
+    margin-top: 30px;
+}
+
+.channel-group-title {
+    color: var(--color-orange-dark, #E65100); 
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.divider-top {
+    margin-top: 25px;
+    border-bottom: 1px solid var(--border-color, #FFE0B2);
+    padding-bottom: 5px;
+}
+
+/* --- 画像挿入用プレースホルダー --- */
+.img-placeholder {
+    width: 100%;
+    height: 150px;
+    border: 2px dashed var(--color-orange, #F57C00);
+    background-color: var(--placeholder-bg, #FFF8E1);
+    color: var(--color-orange-dark, #E65100);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.img-placeholder-sm {
+    height: 100px;
+    margin-top: 10px;
+}
+
+.manual-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 15px 0;
+    display: block;
+    border: 1px solid var(--card-border, #eaeaea);
+}
+
+/* --- 📋 コピーボタン --- */
+.copy-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: var(--card-bg, white);
+    color: var(--color-orange, #F57C00);
+    border: 2px solid var(--color-orange, #F57C00);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.copy-btn:hover {
+    background-color: var(--color-orange, #F57C00);
+    color: white;
+}
+
+/* --- 🍞 トースト通知（ポップアップ） --- */
+.toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--toast-bg, rgba(50, 50, 50, 0.95));
+    color: var(--toast-text, white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    z-index: 2000;
+    white-space: nowrap;
+}
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --- 💡 直感的なタブUI（チャネル説明用） --- */
+.tabs-container {
+    margin-top: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color, #ddd);
+}
+
+.tab-btn {
+    background: var(--nav-bg, #eee);
+    color: var(--text-color, #333);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.tab-btn:hover {
+    background-color: var(--menu-workflow-border, #FFECB3);
+}
+
+.tab-btn.active {
+    background-color: var(--color-orange, #F57C00);
+    color: white;
+    box-shadow: 0 2px 6px rgba(245, 124, 0, 0.3);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- ステップのデザイン --- */
+.step-box {
+    background: var(--step-bg, #fffdfa);
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid var(--step-border, #fce4ec);
+    display: flex; 
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.step-number {
+    background-color: var(--color-orange, #F57C00); 
+    color: white;
+    font-weight: bold;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.step-content h4, .step-content h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--heading-color, #333);
+}
+
+.step-heading { margin-top: 0; margin-bottom: 5px; }
+.step-text { margin: 0; }
+
+.check-list {
+    background-color: var(--list-bg, #FFF8E1); 
+    padding: 15px 15px 15px 35px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.check-list li { margin-bottom: 5px; }
+
+/* --- SPA（画面切り替え）用の隠しクラス --- */
+.content-section {
+    display: none;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- フッターのデザイン --- */
+.main-footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-muted, #666);
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* =========================================
+   🌙 ダークモード（ナイトモード）設定
+   ========================================= */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --text-muted: #aaa;
+    --heading-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --border-color: #444;
+    --header-bg: #1A1A1A;
+    --group-bg: #2c2c2c;
+    --step-bg: #1e1e1e;
+    --step-border: #444;
+    --list-bg: #2c2c2c;
+    --nav-bg: #333;
+    --placeholder-bg: #2c2c2c;
+    --sos-bg: #1b2e1b;
+    
+    /* バッジのダークモード色 */
+    --badge-bg: #333333;
+    --badge-text: #FFB74D;
+    --badge-border: #555555;
+    
+    /* トーストのダークモード色 */
+    --toast-bg: rgba(200, 200, 200, 0.95);
+    --toast-text: #121212;
+
+    /* カード等の独自色をリセットして目に優しく */
+    --menu-glossary: #1e1e1e;
+    --menu-glossary-border: #333;
+    --menu-channel: #1e1e1e;
+    --menu-channel-border: #333;
+    --menu-rule: #1e1e1e;
+    --menu-rule-border: #333;
+    --menu-workflow: #1e1e1e;
+    --menu-workflow-border: #333;
+
+    /* アクセントカラーを統一して発光させる */
+    --color-orange: #FFB74D;
+    --color-orange-dark: #FFA726;
+    --color-red: #ef5350;
+    --color-green: #66bb6a;
+    --color-purple: #ab47bc;
+    --color-blue: #42a5f5;
+}
+
+/* ダークモード時のヘッダー枠線補正 */
+body.dark-mode .main-header {
+    border-bottom: 2px solid var(--color-orange);
+}

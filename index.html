@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GI Teamsマニュアル</title>
+    
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <button id="header-back-btn" onclick="showHome()" style="display: none;">⬅ ホーム</button>
+        
+        <h1>GIのGIによるGIのためのTeamsマニュアル</h1>
+        <p>Teamsの使い方がよくわからなくて不安よな。委員長動きます。</p>
+        
+        <button id="theme-toggle" title="画面の明るさを切り替える">🌙</button>
+    </header>
+
+    <main>
+        <div id="home-menu">
+            <section class="intro-text">
+                <p>この単語の意味ってなんだっけ？ 赤入れの手順はどうだっけ？<br>
+                知りたい項目をタップして確認してください。</p>
+            </section>
+
+            <nav class="nav-grid">
+                <a href="#" class="card glossary" onclick="showSection('sec-glossary')">
+                    <h2>📝 GI用語集</h2>
+                    <p>「チャネル」「赤入れ」「SK」など、委員会独自の専門用語を解説。</p>
+                </a>
+                <a href="#" class="card channel-card" onclick="showSection('sec-channels')">
+                    <h2>📖 チャネル説明</h2>
+                    <p>「この連絡、どこに書くんだっけ？」「あい室の予約方法は？」と迷ったらココ。</p>
+                </a>
+                <a href="#" class="card rule" onclick="showSection('sec-rules')">
+                    <h2>💬 投稿・閲覧ルール</h2>
+                    <p>大前提の心構えや、23時以降のルール、メンションの書き方などのルールを確認。</p>
+                </a>
+                <a href="#" class="card workflow" onclick="showSection('sec-akaire')">
+                    <h2>✍️ 赤入れ手順</h2>
+                    <p>「リンクだけ貼るんだっけ？」「送信後の合図は？」など、迷いがちな赤入れの手順を再確認。</p>
+                </a>
+            </nav>
+
+            <div class="sos-guide">
+                <article class="content-card border-green sos-card">
+                    <h3 class="text-green sos-title">🆘 困ったときはどうすればいい？</h3>
+                    <p>「どのチャネルに投稿すればいいか本気で迷った」「マニュアルにないトラブルが起きた」…そんな時は焦らなくて大丈夫！</p>
+                    <p>まずは<strong>直属の担当長や局長に気軽に質問</strong>してください。みんな最初は初心者です！</p>
+                </article>
+            </div>
+        </div>
+
+        <section id="sec-glossary" class="content-section">
+            <h2 class="section-title">📝 GI用語集</h2>
+            <p>日常生活ではあまり馴染みのない、Teamsや委員会活動ならではの用語をまとめました。</p>
+
+            <div class="card-grid">
+                <article class="content-card border-orange">
+                    <h4 class="text-orange">チャネル</h4>
+                    <p>Teams内にある「話題ごとの部屋」のこと。GIでは<span class="badge">00-00 全体</span>など、目的や局ごとに細かく部屋（チャネル）を分けて情報を整理しています。</p>
+                </article>
+
+                <article class="content-card border-orange">
+                    <h4 class="text-orange">投稿</h4>
+                    <p>Teams等のチャネルにメッセージや資料を書き込むこと。GIでは重要な決定事項や業務連絡は、LINEではなく必ずTeamsの適切なチャネルに「投稿」して全体に共有します。</p>
+                </article>
+
+                <article class="content-card border-orange">
+                    <h4 class="text-orange">メンション</h4>
+                    <p>「@名前」の形で特定の相手を指定し、直接通知を飛ばす機能。相手に確実に読んでもらう（確認漏れを防ぐ）ための必須テクニックです。</p>
+                </article>
+
+                <article class="content-card border-orange">
+                    <h4 class="text-orange">リアクション</h4>
+                    <p>他の人の投稿に対してスタンプを押す機能。GIでは<strong>「内容を読み、把握しました」という確認の合図</strong>として機能するため、メンションされたら必須の行動です。</p>
+                </article>
+
+                <article class="content-card border-blue">
+                    <h4 class="text-blue">赤入れ（あかいれ）</h4>
+                    <p>自分が作成した文章や書類を、他のメンバー（上級生や重役など）に確認・添削してもらう作業のこと。期限を設けて依頼し、承認されてから外部へ送信・提出します。</p>
+                </article>
+
+                <article class="content-card border-blue">
+                    <h4 class="text-blue">日調（にっちょう）</h4>
+                    <p>「日程調整」の略。会議や作業の日にちを決める作業のこと。TeamsではなくLINE等のツール（調整さんなど）で行うことが多いです。</p>
+                </article>
+                
+                <article class="content-card border-blue">
+                    <h4 class="text-blue">SK</h4>
+                    <p>「参加団体責任者会議」の略称。主にGIから小金井祭に参加する全団体に連絡等を行う会議のこと。だいたい月に一回のペースで行われ、動員があります。</p>
+                </article>
+
+                <article class="content-card border-blue">
+                    <h4 class="text-blue">レジュメ</h4>
+                    <p>会議をスムーズに進行するための資料のこと。議題などが書かれており、会議の前に共有されます。</p>
+                </article>
+
+                <article class="content-card border-green">
+                    <h4 class="text-green">定例会</h4>
+                    <p>委員会全体で定期的に行われる会議のこと。重要な決定事項が共有されるため、原則として参加が必要です。重大な連絡をササッと済ませてみんなと談笑する時間にしたいよね。</p>
+                </article>
+
+                <article class="content-card border-green">
+                    <h4 class="text-green">重役</h4>
+                    <p>委員長、副委員長、財務、団体局長、管理局長、広報局長、企画局長の7人で構成される、いわゆる幹部ポジ。</p>
+                </article>
+
+                <article class="content-card border-red">
+                    <h4 class="text-red">仮企画書チェック（仮企チェック）</h4>
+                    <p>各参加団体が企画の初期段階で作成する、仮企画書の内容を確認する作業のこと。動員があります。</p>
+                </article>
+
+                <article class="content-card border-red">
+                    <h4 class="text-red">本企画書チェック（本企チェック）</h4>
+                    <p>仮企画書より詳細な「本企画書」の内容を確認する作業のこと。動員があります。</p>
+                </article>
+
+                <article class="content-card border-green">
+                    <h4 class="text-green">課外（かがい）</h4>
+                    <p>大学の学生課のこと。窓口はS棟の2階にある。文化祭を開催するにあたり、様々な書類の提出や許可取りを行います。</p>
+                </article>
+
+                <article class="content-card border-green">
+                    <h4 class="text-green">協賛（きょうさん）</h4>
+                    <p>企業や地域のお店などから、文化祭の運営資金や物品の援助を受けること。協賛担当が中心となって交渉を行います。</p>
+                </article>
+
+                <article class="content-card border-purple">
+                    <h4 class="text-purple">あい室</h4>
+                    <p>サークル棟4階の一番奥にある、GIの部室のこと。<span class="badge">00-60</span>使用する場合は<span class="badge">00-60 あい室</span>チャネルで予約が必要です。</p>
+                </article>
+
+                <article class="content-card border-purple">
+                    <h4 class="text-purple">合宿所</h4>
+                    <p>夏休み頃から使用可能になるGIの主な作業場所。課外から特別な許可を得て使用するため、<strong>外部への情報漏洩は絶対に厳禁</strong>です。<span class="badge">00-70 合宿所</span>チャネルで予約が必要です。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="sec-channels" class="content-section">
+            <h2 class="section-title">📖 チャネル説明（＋施設予約）</h2>
+            <p>気になる系列（局）をタップしてください。</p>
+
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'tab-00')">🏢 全体(00)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-10')">🎪 団体(10)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-20')">🔧 管理(20)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-30')">📢 広報(30)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-40')">🎉 企画(40)</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-50')">💰 財務(50)</button>
+                </div>
+
+                <div id="tab-00" class="tab-content active">
+                    <p>全体に関することを投稿するチャネルです。</p>
+                    <div class="card-grid">
+                        <div class="content-card"><h5>00-00 全体</h5><p>人員の動員やスケジュールなどを投稿します。<strong>絶対に見逃さない</strong>ようにしましょう。</p></div>
+                        <div class="content-card"><h5>00-10 会議</h5><p>執行代会議や定例会等の会議の日程や議題、レジュメ等を投稿します。<strong>絶対に見逃さない</strong>ようにしましょう。</p></div>
+                        <div class="content-card"><h5>00-20 データ</h5><p><strong>このチャネルでは基本的に投稿はしません</strong>。担当長等は完成した書類等を該当するファイルにアップロードしてください。</p></div>
+                        <div class="content-card"><h5>00-30 書類赤入れ</h5><p>課外や参加団体等に提出する書類の赤入れ投稿をします。ここには該当チャネルの投稿リンクのコピーを投稿してください。</p></div>
+                        <div class="content-card"><h5>00-40 メール赤入れ</h5><p>メインで使用するメールから送信、返信する文章の赤入れをします。ここには該当チャネルの投稿リンクのコピーを投稿してください。</p></div>
+                        <div class="content-card"><h5>00-50 団体対応赤入れ</h5><p>団体から来た質問等の対応文章の赤入れ投稿を管理します。ここには該当チャネルの投稿リンクのコピーを投稿してください。</p></div>
+                        <div class="content-card"><h5>00-80 掲示板-試験運用</h5><p>未完成でーーっす</p></div>
+                        <div class="content-card"><h5>00-90 お買い物</h5><p>マニュアル関連にお買い物チャネルマニュアルがあります。</p></div>
+                        <div class="content-card"><h5>01系列</h5><p>委員長副委員長に関することを投稿します。</p></div>
+                    </div>
+                    
+                    <h5 class="channel-group-title divider-top">🚪 施設予約 (00-60 / 00-70)</h5>
+                    <div class="card-grid">
+                        <article class="content-card border-purple">
+                            <h5 class="text-purple">00-60 あい室</h5>
+                            <p>あい室を使用するときに投稿します。一般通過GIに聞かれたくない極秘事項を話し合うときや、zoom会議などを行うときは予約しましょう。</p>
+                            <ul class="check-list">
+                                <li>件名：(日時) あい室予約</li>
+                                <li>一行目：@74th @75th (全体メンション)</li>
+                                <li>二行目以降：使用目的、貸切るか否か</li>
+                            </ul>
+                            <button class="copy-btn" onclick="copyFormat('【(日時) あい室予約】\n@74th @75th(※手打ちで入力！)\n\n使用目的：\n貸切るか否か：')">📋 フォーマットをコピー</button>
+                        </article>
+
+                        <article class="content-card border-purple">
+                            <h5 class="text-purple">00-70 合宿所</h5>
+                            <p>合宿所を使用するときに投稿します。</p>
+                            <ul class="check-list">
+                                <li>件名：（日時）合宿所予約</li>
+                                <li>一行目：@合宿所鍵持ち(メンション)</li>
+                                <li>二行目：企画名</li>
+                            </ul>
+                            <button class="copy-btn" onclick="copyFormat('【(日時) 合宿所予約】\n@合宿所鍵持ち(※手打ちで入力！)\n\n企画名：')">📋 フォーマットをコピー</button>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="tab-10" class="tab-content">
+                    <p>団体局に関するチャネルです。00では局全体に関すること、それ以外では各担当に関することを投稿します。</p>
+                </div>
+
+                <div id="tab-20" class="tab-content">
+                    <p>管理局に関するチャネルです。00では局全体に関すること、それ以外では各担当に関することを投稿します。</p>
+                </div>
+                
+                <div id="tab-30" class="tab-content">
+                    <p>広報局に関するチャネルです。00では局全体に関すること、それ以外では各担当に関することを投稿します。</p>
+                    <div class="card-grid">
+                        <div class="content-card"><h5>30-11 協賛メール赤入れ</h5><p>協賛で使用するメールから送信、返信する文章の赤入れを投稿します。ここには直接赤入れを行う文章を投稿します。</p></div>
+                        <div class="content-card"><h5>30-41 SNS投稿赤入れ</h5><p>Twitter(現X)やInstagramに投稿する文章等の赤入れを投稿します。ここには直接赤入れを行う文章等を投稿します。</p></div>
+                        <div class="content-card"><h5>30-42 他大相互連携連絡用</h5><p>基本的には公式SNSのDMに届いた他大学からの連絡内容を投稿します。</p></div>
+                        <div class="content-card"><h5>30-51 HPお問い合わせ通知</h5><p>HPを介したお問い合わせが流れてきます。</p></div>
+                    </div>
+                </div>
+
+                <div id="tab-40" class="tab-content">
+                    <p>企画局に関するチャネルです。00では局全体に関すること、それ以外では各担当に関することを投稿します。</p>
+                </div>
+
+                <div id="tab-50" class="tab-content">
+                    <p>財務局に関するチャネルです。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-rules" class="content-section">
+            <h2 class="section-title">💬 投稿・閲覧ルール</h2>
+
+            <h3 class="group-title">必須ルール</h3>
+            <p>委員会として活動する上で、必ず守らなければならない大前提です。</p>
+            <div class="card-grid">
+                <article class="content-card border-green">
+                    <h4 class="text-green">📢 大前提：仕事の話はTeamsで！</h4>
+                    <p>LINE等を使用するのも問題ありませんが、その場合はTeamsにも必ずその内容を投稿してください。全体に見える位置で情報共有とその把握を行うことで、担当、局長間などの連携の強化することが目的です。<strong>日調等はTeamsを使わなくてもOKです！</strong></p>
+                </article>
+
+                <article class="content-card border-red">
+                    <h4 class="text-red">🌙 23時以降は休もう</h4>
+                    <p>緊急事態でない限り、Teams, LINE等では<strong>23時以降の投稿、リアクションは行わない</strong>でください。</p>
+                </article>
+
+                <article class="content-card border-red">
+                    <h4 class="text-red">🗣 メンションとリアクション</h4>
+                    <ul class="check-list">
+                        <li>一行目に最低限必要な人をメンションしてください。（誰か迷ったら担当長や局長に聞いてみよう！）</li>
+                        <li><strong class="text-red">@は半角です！！！</strong></li>
+                        <li>個人メンションは「@(学籍番号or氏名)」、役職メンションは「@(役職名)」を使用します。</li>
+                        <li><strong class="text-red">⚠️ チャネルメンション（@チャネル名）は原則禁止です！</strong><br>関係ない人にまで通知がいってしまい、本当に必要な連絡が埋もれる原因になります。必ず個人か役職宛てにメンションしてください。</li>
+                        <li>最低限メンションされたら投稿の内容を把握し、<strong>リアクション</strong>をしてください。メンションされていなくても投稿をチェックすることは大歓迎です。</li>
+                    </ul>
+                </article>
+            </div>
+
+            <h3 class="group-title tips-title">💡 便利なテクニック（Tips）</h3>
+            <p>必須ではありませんが、知っておくと圧倒的に便利な技を紹介します。</p>
+            <div class="card-grid">
+                <article class="content-card border-purple">
+                    <h4 class="text-purple">👁️ 自分専用にカスタマイズ！（チャネル表示）</h4>
+                    <p>全てのチャネルを表示したままだと、大切な連絡が埋もれてしまいます。<strong>！</strong>が先頭についているチャネルと自分の所属する担当に関係するチャネルだけを表示しておき、その他のチャネルは非表示に設定しましょう。自分にとって必要な情報だけが入ってくる快適な環境を作れます！（チャネル名の横の「…」から設定可能です）</p>
+                    <div class="img-placeholder">📸 ここに「チャネルの表示・非表示を設定する画面」の画像を挿入</div>
+                </article>
+
+                <article class="content-card border-blue">
+                    <h4 class="text-blue">✨ 健康人間を装いたい（スケジュール送信）</h4>
+                    <p>夜中にお仕事が捗っても、これをしておけば送信されるのは翌朝09:00等になるため、健康人間を装うことができます。（必須ではありませんが、夜間作業に便利なテクニックです）</p>
+                    <div class="img-placeholder">📸 ここに「スケジュール送信の＋ボタンや設定画面」の画像を挿入</div>
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5 class="step-heading">「＋」ボタンを押す</h5>
+                            <p class="step-text">投稿画面の左下の ＋ をクリックし、「メッセージのスケジュール」を選択してください。</p>
+                        </div>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5 class="step-heading">時間を決めて送信！</h5>
+                            <p class="step-text">日時を選択して送信をクリックしたら完了です。</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="content-card border-green">
+                    <h4 class="text-green">🔰 初心者あるある！お助け機能</h4>
+                    <ul class="check-list">
+                        <li><strong>返信欄の改行は「Shift ＋ Enter」！</strong><br>
+                        新しい投稿をする時は「Enter」で改行できますが、<strong>誰かの投稿に「返信」する時は、普通にEnterを押すと途中で送信されてしまいます。</strong>返信欄で改行したい時は、必ず「Shift」を押しながら「Enter」を押してください。（スマホアプリは右下の改行ボタンでOKです）</li>
+                        
+                        <li class="margin-top-15"><strong>間違えても「編集」「削除」できる！</strong><br>
+                        誤字やメンション忘れをしてしまっても、投稿の右上「…」から「編集」や「削除」が可能です。焦らず直せば大丈夫！
+                        <div class="img-placeholder img-placeholder-sm">📸 ここに「メッセージの編集・削除メニュー」の画像を挿入</div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="sec-akaire" class="content-section">
+            <h2 class="section-title">✍️ 赤入れ手順</h2>
+            <p>書類やメールのチェックをお願いする時のルールです。</p>
+
+            <div class="card-grid">
+                <article class="content-card border-blue">
+                    <h3 class="text-blue">📝 基本の投稿ルール</h3>
+                    <p>まずは以下のフォーマットに従って、対象のファイルや文章を投稿します。</p>
+                    
+                    <div class="img-placeholder">📸 ここに「実際の赤入れ投稿の例（件名・メンション等）」の画像を挿入</div>
+
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>まずは投稿する</h4>
+                            <ul class="check-list">
+                                <li>件名：【○○赤入れ】（件名）</li>
+                                <li>一行目：@メンション（最低限必要な人）</li>
+                                <li>二行目：期限（一日以上確保できるよう意識！）</li>
+                                <li>三行目以降：本文</li>
+                            </ul>
+                            <button class="copy-btn" onclick="copyFormat('【○○赤入れ】\n@メンション(※手打ちで入力！)\n期限：\n\n')">📋 フォーマットをコピー</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="content-card border-red">
+                    <h3 class="text-red">⚠️ 書類・メール・団体対応の特殊ルール</h3>
+                    <p>投稿後は、その投稿のリンクをコピーし、該当する赤入れチャネルに<strong>リンクのみを貼りつけて</strong>投稿してください。こうすることで、過去の赤入れ文章を探しやすいようになります。</p>
+                    
+                    <div class="img-placeholder">📸 ここに「リンクをコピーする操作画面」の画像を挿入</div>
+
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>リンクをコピーする</h4>
+                            <p>投稿に触れ、右上の三点リーダー（その他のオプション）をクリックすると上のようになります。「リンクのコピー」を選択してください。</p>
+                        </div>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>赤入れチャネルに貼る</h4>
+                            <p><span class="badge">00-20 書類赤入れ</span>などの専用チャネルに、さっきコピーしたリンクを貼り付けて投稿します。</p>
+                        </div>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>送信済みのリアクションをつける（完了！）</h4>
+                            <p>メール赤入れ、団体対応赤入れ等については、相手に送信後、送信した証として該当のメッセージに<strong>決まったリアクション（スタンプ）</strong>をつけてください。これにより、送信完了状態を視覚化します。</p>
+                            
+                            <div class="img-placeholder img-placeholder-sm">📸 ここに「送信完了の証とするリアクション（スタンプ）」の画像を挿入</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <p>Geminiと委員長で二人三脚で作成しました。</p>
+        </footer>
+    </main>
+
+    <div id="toast" class="toast">✅ コピーしました！</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
