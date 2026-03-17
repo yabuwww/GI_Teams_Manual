@@ -202,6 +202,10 @@ main {
 .workflow { background: var(--menu-workflow, #FFF3E0); border-color: var(--menu-workflow-border, #FFE0B2); } 
 .workflow h2 { color: var(--color-orange-dark, #E65100); margin: 0 0 10px 0;}
 
+/* ★ 新設：「知ってたらうれしいかも」カードの色設定（パープル系） */
+.tips-card { background: var(--menu-tips, #f3e5f5); border-color: var(--menu-tips-border, #e1bee7); }
+.tips-card h2 { color: var(--color-purple, #7b1fa2); margin: 0 0 10px 0;}
+
 /* --- 各セクション用のデザイン --- */
 .section-title {
     color: var(--color-orange-dark, #E65100); 
@@ -460,6 +464,8 @@ body.dark-mode {
     --menu-rule-border: #333;
     --menu-workflow: #1e1e1e;
     --menu-workflow-border: #333;
+    --menu-tips: #1e1e1e; /* 追加：Tipsのダークモード */
+    --menu-tips-border: #333;
 
     /* アクセントカラーを統一して発光させる */
     --color-orange: #FFB74D;
@@ -473,4 +479,51 @@ body.dark-mode {
 /* ダークモード時のヘッダー枠線補正 */
 body.dark-mode .main-header {
     border-bottom: 2px solid var(--color-orange);
+}
+
+/* =========================================
+   🖨️ 印刷（PDF）用の最適化CSS
+   ========================================= */
+@media print {
+    body { 
+        background-color: white !important; 
+        color: black !important; 
+    }
+    .main-header { 
+        position: static; 
+        box-shadow: none; 
+        color: black;
+        border-bottom: 2px solid #ccc;
+    }
+    /* 印刷時に不要なボタンやメニューを隠す */
+    #theme-toggle, #header-back-btn, .quick-nav, .copy-btn, #home-menu, #toast { 
+        display: none !important; 
+    }
+    /* アコーディオンの装飾を消して平坦にする */
+    .accordion-item { 
+        border: none; 
+        box-shadow: none; 
+        break-inside: avoid; 
+        margin-bottom: 20px; 
+    }
+    .accordion-body { 
+        border-top: none; 
+        padding: 0; 
+    }
+    .accordion-item summary::after { 
+        display: none; 
+    }
+    /* 印刷時は非表示になっているセクションも表示する（JS側で開く処理と連動） */
+    .content-section { 
+        display: block !important; 
+        page-break-before: always;
+    }
+    /* 最初のセクションは改ページしない */
+    .content-section:first-of-type {
+        page-break-before: auto;
+    }
+    .img-placeholder {
+        border-color: #ccc;
+        color: #666;
+    }
 }
