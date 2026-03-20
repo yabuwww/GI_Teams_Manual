@@ -206,6 +206,12 @@ main {
 .tips-card { background: var(--menu-tips, #f3e5f5); border-color: var(--menu-tips-border, #e1bee7); }
 .tips-card h2 { color: var(--color-purple, #7b1fa2); margin: 0 0 10px 0;}
 
+/* ▼▼▼ ここから下を追加 ▼▼▼ */
+/* ★ 新設：「マニュアル関連」カードの色設定（ティール/青緑系） */
+.manual-card { background: var(--menu-manual, #e0f2f1); border-color: var(--menu-manual-border, #b2dfdb); }
+.manual-card h2 { color: var(--color-teal, #00796b); margin: 0 0 10px 0;}
+/* ▲▲▲ ここまで ▲▲▲ */
+
 /* --- 各セクション用のデザイン --- */
 .section-title {
     color: var(--color-orange-dark, #E65100); 
@@ -274,49 +280,6 @@ main {
     border: 1px solid var(--card-border, #eaeaea);
 }
 
-/* --- 📋 コピーボタン --- */
-.copy-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: var(--card-bg, white);
-    color: var(--color-orange, #F57C00);
-    border: 2px solid var(--color-orange, #F57C00);
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-}
-.copy-btn:hover {
-    background-color: var(--color-orange, #F57C00);
-    color: white;
-}
-
-/* --- 🍞 トースト通知（ポップアップ） --- */
-.toast {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background-color: var(--toast-bg, rgba(50, 50, 50, 0.95));
-    color: var(--toast-text, white);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-    z-index: 2000;
-    white-space: nowrap;
-}
-.toast.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
 
 /* --- 💡 直感的なタブUI（チャネル説明用） --- */
 .tabs-container {
@@ -467,6 +430,11 @@ body.dark-mode {
     --menu-tips: #1e1e1e; /* 追加：Tipsのダークモード */
     --menu-tips-border: #333;
 
+    /* ▼▼▼ ここから下を2行追加 ▼▼▼ */
+    --menu-manual: #1e1e1e;
+    --menu-manual-border: #333;
+    /* ▲▲▲ ここまで ▲▲▲ */
+
     /* アクセントカラーを統一して発光させる */
     --color-orange: #FFB74D;
     --color-orange-dark: #FFA726;
@@ -474,6 +442,10 @@ body.dark-mode {
     --color-green: #66bb6a;
     --color-purple: #ab47bc;
     --color-blue: #42a5f5;
+
+    /* ▼▼▼ ここから下を1行追加 ▼▼▼ */
+    --color-teal: #4db6ac;
+    /* ▲▲▲ ここまで ▲▲▲ */
 }
 
 /* ダークモード時のヘッダー枠線補正 */
