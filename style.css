@@ -7,9 +7,15 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: var(--bg-color, #fcf9f6); 
+    background-color: var(--bg-color, #fcf9f6); /* ベースの薄い色 */
     color: var(--text-color, #333);
     transition: background-color 0.3s, color 0.3s;
+    
+    /* ▼▼▼ ここから下を2行追加 ▼▼▼ */
+    background-image: url('HP.png'); /* ★用意した画像ファイル名に！ */
+    background-repeat: repeat; /* ★パターンを敷き詰める設定 */
+    background-attachment: fixed; /* ★スクロールしても背景は固定（オシャレ！） */
+    /* ▲▲▲ ここまで ▲▲▲ */
 }
 
 /* 📌 固定ヘッダーのデザイン（GIオレンジ！） */
@@ -126,6 +132,7 @@ main {
     display: grid;
     gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: start; /* ▼▼▼ これを1行追加！ ▼▼▼ */
 }
 
 .card-grid {
@@ -133,6 +140,7 @@ main {
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 15px;
+    align-items: start; /* ▼▼▼ これを1行追加！ ▼▼▼ */
 }
 
 /* --- カード共通のデザイン --- */
@@ -446,6 +454,8 @@ body.dark-mode {
     /* ▼▼▼ ここから下を1行追加 ▼▼▼ */
     --color-teal: #4db6ac;
     /* ▲▲▲ ここまで ▲▲▲ */
+
+    background-image: none !important; /* ★ダークモードではパターンを消す */
 }
 
 /* ダークモード時のヘッダー枠線補正 */
