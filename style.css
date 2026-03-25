@@ -1,23 +1,35 @@
 /* 全体のリセットと基本設定 */
+/* 全体のリセットと基本設定 */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    /* ★スマホで画面が横に揺れて右半分が白くなるのを完全に防ぐ */
+    overflow-x: hidden;
 }
 
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: var(--bg-color, #fcf9f6); /* ベースの薄い色 */
     color: var(--text-color, #333);
     transition: background-color 0.3s, color 0.3s;
     
-    /* ▼▼▼ ここから下を2行追加 ▼▼▼ */
-    background-image: url('HP.png'); /* ★用意した画像ファイル名に！ */
-    background-repeat: repeat; /* ★パターンを敷き詰める設定 */
-    background-attachment: fixed; /* ★スクロールしても背景は固定（オシャレ！） */
+    /* ★スマホでの横揺れ防止（念押し） */
+    overflow-x: hidden;
+
+    /* ▼▼▼ 背景を絶対に途切れさせない魔法の5行 ▼▼▼ */
+    min-height: 100vh; /* 画面の高さ100%を最低限保証する */
+    background-size: cover; /* 画面いっぱいに引き伸ばす */
+    background-repeat: no-repeat; /* 繰り返さない */
+    background-position: center; /* 中央に固定 */
+    background-attachment: fixed; /* スクロールしても背景を動かさない */
+    
+    /* （グラデーションの場合はこちら） */
+    background-image: linear-gradient(135deg, #ffffff 0%, #FFF3E0 100%);
+    
+    /* ※もし用意した「画像」を使っている場合は、上の1行を消して↓を使ってください */
+    /* background-image: url('画像のファイル名.png'); */
     /* ▲▲▲ ここまで ▲▲▲ */
 }
-
 /* 📌 固定ヘッダーのデザイン（GIオレンジ！） */
 .main-header {
     text-align: center;
