@@ -1,12 +1,18 @@
 export const config = {
-  matcher: '/(.*)', // すべてのページに適用
+  matcher: '/(.*)', 
 };
 
 export default function middleware(req) {
   const authHeader = req.headers.get('authorization');
 
-  // ※もしパスワードを変えたい場合は、ここを新しい文字列に差し替えてください
-  if (authHeader !== 'Basic bW9ldGE6bW9lbW9la3l1bg==') {
+  // Vercelの設定画面からユーザー名とパスワードを取得する
+  const USERNAME = process.env.BASIC_AUTH_USER;
+  const PASSWORD = process.env.BASIC_AUTH_PASS;
+
+  // 取得した値を使って、正解の合言葉を作成する
+  const expectedAuth = `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`;
+
+  if (authHeader !== expectedAuth) {
     return new Response('認証が必要です', {
       status: 401,
       headers: {
@@ -14,7 +20,4 @@ export default function middleware(req) {
       },
     });
   }
-
-  // 認証が成功した場合は、何も返さない（returnしない）ことで
-  // そのまま本来のページが表示されるようになります。
 }
